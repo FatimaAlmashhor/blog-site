@@ -1,0 +1,19 @@
+{
+    "name": "blogs/site",
+    "autoload": {
+        "psr-4": {
+            "Database\\": "class/Database",
+            "Blog\\": "class/Blog",
+            "Post\\": "class/Post",
+            "Account\\": "class/Account",
+            "Permission\\": "class/Permission"
+        }
+    },
+    "authors": [
+        {
+            "name": "FatimaAlmashhor",
+            "email": "fatima.amin4official@gmail.com"
+        }
+    ],
+    "require": {}
+}
