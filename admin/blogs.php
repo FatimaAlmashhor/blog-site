@@ -19,15 +19,15 @@ $posts = new Fetch();
 </head>
 
 <body>
+    <a href='/new.php'>New</a>
     <?php
     foreach ($posts->posts as $post) {
 
-    ?>
-    <div>
+    ?> <div>
         <?php echo $post->blog_title; ?>
     </div>
-    <a href="./posts/edit.php?id=<?php echo $post->blog_id;?>">Edit</a>
-    <a href="./posts/delete.php?id=<?php echo $post->blog_id;?>">Delete</a>
+    <a href="./posts/edit.php?id=<?php echo $post->blog_id; ?>">Edit</a>
+    <a href="./posts/delete.php?id=<?php echo $post->blog_id; ?>">Delete</a>
     <?php
     };
     ?>

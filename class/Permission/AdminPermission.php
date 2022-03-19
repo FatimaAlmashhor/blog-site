@@ -14,12 +14,10 @@ class AdminPermission
      */
     function permissionAdmin()
     {
-        if (isset($_SESSION["isLogged"])  && isset($_SESSION["isAdmin"])) {
-            header("location: /");
-            die();
+        if ($_SESSION["isLogged"] == true  && $_SESSION["isAdmin"] == 0) {
+            return true;
         } else {
-            header("location: login.php");
-            die();
+            return false;
         }
     }
 }
