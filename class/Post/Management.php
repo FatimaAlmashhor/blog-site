@@ -16,6 +16,7 @@ class Management
     public int $postId;
     public string $postTitle;
     public string $postBody;
+    public string $createdAt;
     // public string $isPublished;
     private object $db;
     private int $userId;
@@ -64,10 +65,10 @@ class Management
         $this->db->bind(":postId", $id, PDO::PARAM_INT);
 
         if ($this->db->execute()) {
-            header("location: ./posts.php?deletePostStatus=1");
+            header("location: ../blogs.php?deletePostStatus=1");
             die();
         } else {
-            header("location: ./posts.php?deletePostStatus=2");
+            header("location: ../blogs.php?deletePostStatus=2");
             die();
         }
     }
@@ -78,14 +79,14 @@ class Management
      */
     public function getPost(int $id): void
     {
-        $this->db->query("SELECT `title`, `body`, `published` FROM `posts` WHERE `id`=:id");
+        $this->db->query("SELECT `blog_title`, `blog_body`, `created_at` FROM `blogs` WHERE `blog_id`=:id");
         $this->db->bind(":id", $id, PDO::PARAM_INT);
         $this->db->execute();
         $result = $this->db->fetch();
         $this->postId = $id;
-        $this->postTitle = $result->title;
-        $this->postBody = $result->body;
-        $this->isPublished = $result->published;
+        $this->postTitle = $result->blog_title;
+        $this->postBody = $result->blog_body;
+        $this->createdAt = $result->created_at;
     }
 
     /**
@@ -95,18 +96,18 @@ class Management
      * @param string $isPublished
      * @param int $postId
      */
-    public function updatePost(string $title, string $body, string $isPublished, int $postId): void
+    public function updatePost(string $title, string $body,  int $postId): void
     {
-        $this->db->query("UPDATE `blogs` SET `blog_title` = :title, `blog_body` = :body, `published` = :published WHERE `blog_id` = :id");
+        $this->db->query("UPDATE `blogs` SET `blog_title` = :title, `blog_body` = :body WHERE `blog_id` = :id");
         $this->db->bind(":title", $title, PDO::PARAM_STR);
         $this->db->bind(":body", $body, PDO::PARAM_STR);
-        $this->db->bind(":published", $isPublished, PDO::PARAM_STR);
+        $this->db->bind(":id", $postId, PDO::PARAM_STR);
 
         if ($this->db->execute()) {
-            header("location: ./posts.php?updatePostStatus=1");
+            header("location: ../blogs.php?updatePostStatus=1");
             die();
         } else {
-            header("location: ./posts.php?updatePostStatus=2");
+            header("location: ../blogs.php?updatePostStatus=2");
             die();
         }
     }

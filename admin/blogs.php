@@ -1,40 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
 <?php
 
-use Post\Management;
+use Post\Fetch;
 
 require_once('../vendor/autoload.php');
 
-$postManager = new Management();
+$posts = new Fetch();
 
-if (isset($_POST['submit'])) {
-    print_r($_POST['blog_body']);
-    $postTitle = trim($_POST["title"]);
-    $postBody = trim($_POST["blog_body"]);
-
-    $postManager->addPost($postTitle, $postBody);
-}
 ?>
+
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Blogs</title>
 </head>
-<script src="https://cdn.ckeditor.com/4.18.0/full/ckeditor.js"></script>
 
 <body>
-    <h1>Test</h1>
-    <form action='index.php' method="post">
-        <input type="text" name='title' placeholder="Title of the article" />
-        <textarea name="blog_body"></textarea>
-        <input type="submit" name='submit' />
-        <script>
-        CKEDITOR.replace('blog_body');
-        </script>
-    </form>
+    <?php
+    foreach ($posts->posts as $post) {
+
+    ?>
+    <div>
+        <?php echo $post->blog_title; ?>
+    </div>
+    <a href="./posts/edit.php?id=<?php echo $post->blog_id;?>">Edit</a>
+    <a href="./posts/delete.php?id=<?php echo $post->blog_id;?>">Delete</a>
+    <?php
+    };
+    ?>
 </body>
 
 </html>
