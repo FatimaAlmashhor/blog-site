@@ -20,7 +20,7 @@ class Owner
         $this->conn->bind(":type", 0, PDO::PARAM_INT);
         $this->conn->execute();
         $this->hasOwner =  $this->conn->rowCount();
-        if($this->hasOwner == 0){
+        if ($this->hasOwner == 0) {
             header('location: register.php');
             die();
         }

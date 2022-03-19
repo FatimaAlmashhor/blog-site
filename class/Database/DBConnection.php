@@ -19,7 +19,7 @@ class DBConnection
         try {
             $this->conn  = new PDO($this->host, $this->user, $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo 'Scussesfuly connected ';
+            // echo 'Scussesfuly connected ';
         } catch (PDOException $e) {
             echo 'Failed To Connected' . $e;
         }
