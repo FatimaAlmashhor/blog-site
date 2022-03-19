@@ -12,6 +12,10 @@ class ComposerStaticInit1a9f16f8c4f447ac4e72191af2ecdc0e
             'Post\\' => 5,
             'Permission\\' => 11,
         ),
+        'I' => 
+        array (
+            'Inital\\' => 7,
+        ),
         'D' => 
         array (
             'Database\\' => 9,
@@ -34,6 +38,10 @@ class ComposerStaticInit1a9f16f8c4f447ac4e72191af2ecdc0e
         'Permission\\' => 
         array (
             0 => __DIR__ . '/../..' . '/class/Permission',
+        ),
+        'Inital\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/class/Inital',
         ),
         'Database\\' => 
         array (

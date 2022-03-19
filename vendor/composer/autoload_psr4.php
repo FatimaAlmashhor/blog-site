@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'Post\\' => array($baseDir . '/class/Post'),
     'Permission\\' => array($baseDir . '/class/Permission'),
+    'Inital\\' => array($baseDir . '/class/Inital'),
     'Database\\' => array($baseDir . '/class/Database'),
     'Blog\\' => array($baseDir . '/class/Blog'),
     'Account\\' => array($baseDir . '/class/Account'),
