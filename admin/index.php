@@ -4,7 +4,13 @@ use Permission\AdminPermission;
 
 require_once('../vendor/autoload.php');
 $permission = new AdminPermission();
+if (isset($_GET['do']) && $_GET['do'] == 'logout') {
+    $permission->logout();
+}
+
+
 $checked = $permission->permissionAdmin();
+
 if (!$checked) {
     header('location: ../login.php');
 }

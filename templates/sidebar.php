@@ -30,7 +30,14 @@
             <li class="nav__item">
                 <a href="blogs.php" class="nav__link active">
                     <ion-icon name="folder-outline" class="nav__icon"></ion-icon>
-                    <span class="nav__name">blogs</span>
+                    <span class="nav__name">Blogs</span>
+                </a>
+            </li>
+
+            <li class="nav__item">
+                <a href="index.php?do=logout" class="nav__link active">
+                    <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
+                    <span class="nav__name">Logout</span>
                 </a>
             </li>
 

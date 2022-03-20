@@ -20,4 +20,10 @@ class AdminPermission
             return false;
         }
     }
+    function logout()
+    {
+        // $_SESSION["isLogged"] = false;
+        unset($_SESSION["isLogged"]);
+        unset($_SESSION["isAdmin"]);
+    }
 }

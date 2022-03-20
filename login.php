@@ -16,7 +16,7 @@ if (isset($_POST["login"])) {
 
 ?><div class="  top-0 fixed mode w-screen h-screen flex justify-center items-center bg-black bg-opacity-60 z-50">
     <div class=" relative w-96 h-fil border-4 border-white p-3 rounded-md bg-white">
-        <a href='payment.process.php?do=closeModel' style="top:-26px; left:-20px; " class=" absolute z-20 flex justify-center items-center overflow-hidden w-12 h-12
+        <a href='./index.php' style="top:-26px; left:-20px; " class=" absolute z-20 flex justify-center items-center overflow-hidden w-12 h-12
             cursor-pointer bg-red-400 hover:bg-red-300 p-2 rounded-full border-4 border-white transition-all">
             <ion-icon class="text-white font-bold" name="close-outline"></ion-icon>
         </a>
@@ -35,7 +35,7 @@ if (isset($_POST["login"])) {
                     Account\Login::printError($error);
                 }
                 ?>
-                <button class="my-2 p-2 rounded bg-blue-400 text-white" type="submit" name='login'> Login</button>
+                <button class="my-2 p-2 rounded bg-blue text-white" type="submit" name='login'> Login</button>
             </form>
             <p>
                 You do not have an account ?<a href='payment.process.php?do=registerModel' class="text-blue-400">
