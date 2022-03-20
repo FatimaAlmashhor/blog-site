@@ -47,10 +47,10 @@ class Management
 
         // Execute the statement
         if ($this->db->execute()) {
-            header("location: ./posts.php?newPostStatus=1");
+            header("location: ../blogs.php?newPostStatus=1");
             die();
         } else {
-            header("location: ./posts.php?newPostStatus=2");
+            header("location: ../blogs.php?newPostStatus=2");
             die();
         }
     }

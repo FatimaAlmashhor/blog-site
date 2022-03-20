@@ -19,7 +19,7 @@ $posts = new Fetch();
 </head>
 
 <body>
-    <a href='/new.php'>New</a>
+    <a href='./posts/new.php'>New</a>
     <?php
     foreach ($posts->posts as $post) {
 

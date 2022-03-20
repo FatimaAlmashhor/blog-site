@@ -25,22 +25,5 @@ class Fetch
         $this->conn->execute();
         $this->posts =  $this->conn->fetchAll();
     }
-    /**
-     * Return a post
-     * @param int $id
-     * @return object
-     */
 
-
-    public function fetchPost(int $id): object
-    {
-        // Send query
-        $this->db->query("SELECT `blog_title`, `blog_body` FROM `blogs` WHERE `blog_id`=:id");
-        // Bind the data
-        $this->db->bind(":id", $id, PDO::PARAM_INT);
-        // Execute the statement
-        $this->db->execute();
-        // Return the received data
-        return $this->db->fetch();
-    }
 }

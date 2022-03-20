@@ -4,7 +4,7 @@
 
 use Post\Management;
 
-require_once('../vendor/autoload.php');
+require_once('../../vendor/autoload.php');
 
 $postManager = new Management();
 
@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
 
 <body>
     <h1>Test</h1>
-    <form action='index.php' method="post">
+    <form action='./new.php' method="post">
         <input type="text" name='title' placeholder="Title of the article" />
         <textarea name="blog_body"></textarea>
         <input type="submit" name='submit' />
