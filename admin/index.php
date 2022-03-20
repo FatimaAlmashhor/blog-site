@@ -27,15 +27,15 @@ if (!$checked) {
     <link rel="stylesheet" href="../dist/css/tailwind.css">
     <title>Dashbload</title>
 </head>
-<?php include('../templates/sidebar.php') ?>
 
 <body>
-    dashboard
+    <?php include('../templates/sidebar.php') ?>
+    <div class="ml-60">
+        dashboard
 
-    <!-- ===== IONICONS ===== -->
-    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
-    <!-- ===== MAIN JS ===== -->
-    <script src="../public/js/main.js"></script>
+    </div>
+
+
 </body>
 
 </html>
