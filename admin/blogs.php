@@ -26,7 +26,7 @@ $posts = new Fetch();
         include '../templates/sidebar.php';
         ?>
     </div>
-    <main class=" pl-32 relative min-h-screen w-full ">
+    <main class=" pl-32 relative min-h-screen w-full  ">
         <div class="absolute bottom-5 right-5 bg-blue rounded-full w-16 h-16 hover:shadow-lg "> <a
                 href='./posts/new.php' class="w-full h-full flex justify-center items-center ">
                 <ion-icon name="add-outline" class="font-bold text-3xl"></ion-icon>
@@ -44,6 +44,9 @@ $posts = new Fetch();
         };
         ?>
     </main>
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <!-- ===== MAIN JS ===== -->
+    <script src="../public/js/main.js"></script>
 </body>
 
 </html>
