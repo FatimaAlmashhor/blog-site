@@ -50,7 +50,7 @@ $posts = new Fetch();
             foreach ($posts->posts as $key => $post) {
             ?>
             <div
-                class=" w-full h-full py-3 flex border-b border-gray-300 cursor-pointer  hover:bg-gray-500 <?php if ($key % 2 == 0) echo 'bg-gray-600' ?>">
+                class=" w-full h-full py-3 flex border-b border-gray-500 cursor-pointer  hover:bg-gray-500 <?php if ($key % 2 == 0) echo 'bg-gray-600' ?>">
                 <div class="w-3/12">
                     <?php echo $post->blog_title; ?>
                 </div>

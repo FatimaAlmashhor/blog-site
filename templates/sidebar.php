@@ -35,9 +35,18 @@
             </li>
 
             <li class="nav__item">
-                <a href="../?do=logout" class="nav__link active">
+                <a href="/blog-site/admin/index.php?do=logout" class="nav__link active">
                     <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
                     <span class="nav__name">Logout</span>
+                </a>
+            </li>
+            <div class="border h-full border-gray-600 ">
+
+            </div>
+            <li class="nav__item  ">
+                <a href="../?do=logout" class="nav__link active">
+                    <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
+                    <span class="nav__name">Home</span>
                 </a>
             </li>
 
