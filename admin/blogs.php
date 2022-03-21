@@ -27,22 +27,48 @@ $posts = new Fetch();
         ?>
     </div>
     <main class=" pl-32 relative min-h-screen w-full  ">
-        <div class="absolute bottom-5 right-5 bg-blue rounded-full w-16 h-16 hover:shadow-lg "> <a
+        <div class="w-16 h-16 absolute bottom-5 right-5 bg-blue rounded-full  hover:shadow-lg "> <a
                 href='./posts/new.php' class="w-full h-full flex justify-center items-center ">
                 <ion-icon name="add-outline" class="font-bold text-3xl"></ion-icon>
             </a>
         </div>
-        <?php
-        foreach ($posts->posts as $post) {
+        <div class=" w-full h-full pt-24 pb-7">
+            <h1 class="">BLogs</h1>
+            <div class="w-full flex">
+                <div class="w-3/12">
+                    Title
+                </div>
+                <div class="w-3/12">
+                    Description
+                </div>
+                <div class="w-3/12">
+                    Created At
+                </div>
+            </div>
 
-        ?> <div>
-            <?php echo $post->blog_title; ?>
-        </div>
-        <a href="./posts/edit.php?id=<?php echo $post->blog_id; ?>">Edit</a>
-        <a href="./posts/delete.php?id=<?php echo $post->blog_id; ?>">Delete</a>
-        <?php
-        };
-        ?>
+            <?php
+            foreach ($posts->posts as $key => $post) {
+            ?>
+            <div
+                class=" w-full h-full py-3 flex border-b border-gray-300 cursor-pointer  hover:bg-gray-500 <?php if ($key % 2 == 0) echo 'bg-gray-600' ?>">
+                <div class="w-3/12">
+                    <?php echo $post->blog_title; ?>
+                </div>
+                <div class="w-3/12">
+                    <?php echo $post->blog_des; ?>
+                </div>
+                <div class="w-3/12">
+                    <?php echo $post->created_at; ?>
+                </div>
+                <div class="w-3/12 flex gap-x-4">
+                    <a href="./posts/edit.php?id=<?php echo $post->blog_id; ?>">Edit</a>
+                    <a href="./posts/delete.php?id=<?php echo $post->blog_id; ?>">Delete</a>
+                </div>
+            </div>
+            <?php
+            };
+            ?>
+
     </main>
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
     <!-- ===== MAIN JS ===== -->

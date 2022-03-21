@@ -21,9 +21,8 @@ class Fetch
     // fetch all the posts
     function fetchPosts(): void
     {
-        $this->conn->query("SELECT `blog_id` , `blog_title` , `blog_body` FROM  blogs");
+        $this->conn->query("SELECT `blog_id` , `blog_title` , `blog_body` ,`blog_des` , `created_at` FROM  blogs");
         $this->conn->execute();
         $this->posts =  $this->conn->fetchAll();
     }
-
 }

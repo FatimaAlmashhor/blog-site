@@ -35,7 +35,7 @@
             </li>
 
             <li class="nav__item">
-                <a href="index.php?do=logout" class="nav__link active">
+                <a href="../?do=logout" class="nav__link active">
                     <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
                     <span class="nav__name">Logout</span>
                 </a>
