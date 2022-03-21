@@ -3,17 +3,31 @@
 <?php
 
 use Post\Management;
+use Category\FetchCate;
 
 require_once('../../vendor/autoload.php');
 
+$cates = new FetchCate();
+$mainCates = $cates->fetchMainCat();
+// print_r($mainCates);
+foreach ($mainCates as $cat) {
+    $web = $cates->fetchSubCates($cat->category_id);
+    // foreach ($web as $web)
+    // echo "<h1>" . $web->category_title . "</h1>";
+}
+
 $postManager = new Management();
-
+if (isset($_POST['main_cat'])) {
+    $catId = $_POST['main_cat'];
+    print_r($catId);
+}
 if (isset($_POST['submit'])) {
-    print_r($_POST['blog_body']);
+    // print_r($_POST['blog_body']);
     $postTitle = trim($_POST["title"]);
+    $postDes = trim($_POST["blog_des"]);
     $postBody = trim($_POST["blog_body"]);
-
-    $postManager->addPost($postTitle, $postBody);
+    $catId = (int)trim($mainCates[0]->category_id);
+    $postManager->addPost($postTitle, $postDes, $postBody,  $catId);
 }
 ?>
 <html lang="en">
@@ -40,10 +54,14 @@ if (isset($_POST['submit'])) {
             <form action='./new.php' method="post" class=" flex flex-col gap-4">
                 <div class="flex flex-col lg:flex-row gap-5">
                     <label>Category:</label>
-                    <select class="w-full p-3 bg-transparent border border-gray-400 rounded ">
-                        <option>
-                            Test
-                        </option>
+                    <select name='main_cat' class="w-full p-3 bg-transparent border border-gray-400 rounded ">
+                        <?php
+                        foreach ($mainCates as $cat) {
+                            echo "<option value=" . $cat->category_id . ">";
+                            echo $cat->category_title;
+                            echo " </option> ";
+                        }
+                        ?>
                     </select>
                     <select class="w-full p-3 bg-transparent border border-gray-400 rounded ">
                         <option>
@@ -53,6 +71,8 @@ if (isset($_POST['submit'])) {
                 </div>
                 <input class="p-5 bg-transparent border border-gray-400 rounded" type="text" name='title'
                     placeholder="Title of the article" />
+                <input class="p-5 bg-transparent border border-gray-400 rounded" type="text" name='blog_des'
+                    placeholder="Some description" />
                 <textarea class="p-5 bg-transparent border border-gray-400 rounded" name="blog_body"></textarea>
                 <input class="p-3 bg-blue border border-gray-400 rounded" type="submit" name='submit' />
                 <script>

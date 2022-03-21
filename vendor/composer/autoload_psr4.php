@@ -10,6 +10,7 @@ return array(
     'Permission\\' => array($baseDir . '/class/Permission'),
     'Inital\\' => array($baseDir . '/class/Inital'),
     'Database\\' => array($baseDir . '/class/Database'),
+    'Category\\' => array($baseDir . '/class/Category'),
     'Blog\\' => array($baseDir . '/class/Blog'),
     'Account\\' => array($baseDir . '/class/Account'),
 );

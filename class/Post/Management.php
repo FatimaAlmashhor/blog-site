@@ -37,13 +37,16 @@ class Management
      * @param string $body
      * @param string $isPublished
      */
-    public function addPost(string $title, string $body): void
+    public function addPost(string $title, string $des, string $body, int $cateid): void
     {
         // Prepare the sql statement
-        $this->db->query("INSERT INTO `blogs` (`blog_title`, `blog_body`, `created_at`, `is_active`) VALUES (:postTitle, :postBody,:created, true)");
-        $this->db->bind(":postTitle", $title, PDO::PARAM_STR);
+        $this->db->query("INSERT INTO `blogs` (`blog_title`, `blog_des`,`blog_body`, `created_at`, `category_id`,`is_active`) 
+        VALUES (:postTitle,:postDes, :postBody,:created ,:cat, true)");
+        $this->db->bind(":postTitle",  $title, PDO::PARAM_STR);
+        $this->db->bind(":postDes", $des, PDO::PARAM_STR);
         $this->db->bind(":postBody", $body, PDO::PARAM_STR);
         $this->db->bind(":created", date("l jS \of F Y h:i:s A"), PDO::PARAM_STR_CHAR);
+        $this->db->bind(":cat", $cateid, PDO::PARAM_INT);
 
         // Execute the statement
         if ($this->db->execute()) {
@@ -79,7 +82,7 @@ class Management
      */
     public function getPost(int $id): void
     {
-        $this->db->query("SELECT `blog_title`, `blog_body`, `created_at` FROM `blogs` WHERE `blog_id`=:id");
+        $this->db->query("SELECT `blog_title`, `blog_body`,`blog_des`, `created_at` FROM `blogs` WHERE `blog_id`=:id");
         $this->db->bind(":id", $id, PDO::PARAM_INT);
         $this->db->execute();
         $result = $this->db->fetch();
@@ -96,10 +99,11 @@ class Management
      * @param string $isPublished
      * @param int $postId
      */
-    public function updatePost(string $title, string $body,  int $postId): void
+    public function updatePost(string $title, string $des, string $body,  int $postId): void
     {
-        $this->db->query("UPDATE `blogs` SET `blog_title` = :title, `blog_body` = :body WHERE `blog_id` = :id");
+        $this->db->query("UPDATE `blogs` SET `blog_title` = :title, `blog_des` = :descr,`blog_body` = :body WHERE `blog_id` = :id");
         $this->db->bind(":title", $title, PDO::PARAM_STR);
+        $this->db->bind(":descr", $des, PDO::PARAM_STR);
         $this->db->bind(":body", $body, PDO::PARAM_STR);
         $this->db->bind(":id", $postId, PDO::PARAM_STR);
 

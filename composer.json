@@ -6,7 +6,8 @@
             "Blog\\": "class/Blog",
             "Post\\": "class/Post",
             "Account\\": "class/Account",
-            "Inital\\": "class/Inital",
+            "Inital\\": "class/Inital" ,
+            "Category\\": "class/Category" ,
             "Permission\\": "class/Permission"
         }
     },

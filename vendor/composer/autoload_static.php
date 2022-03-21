@@ -20,6 +20,10 @@ class ComposerStaticInit1a9f16f8c4f447ac4e72191af2ecdc0e
         array (
             'Database\\' => 9,
         ),
+        'C' => 
+        array (
+            'Category\\' => 9,
+        ),
         'B' => 
         array (
             'Blog\\' => 5,
@@ -46,6 +50,10 @@ class ComposerStaticInit1a9f16f8c4f447ac4e72191af2ecdc0e
         'Database\\' => 
         array (
             0 => __DIR__ . '/../..' . '/class/Database',
+        ),
+        'Category\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/class/Category',
         ),
         'Blog\\' => 
         array (

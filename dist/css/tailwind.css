@@ -528,6 +528,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 1rem;
 }
 
+.ml-60 {
+  margin-left: 15rem;
+}
+
 .flex {
   display: flex;
 }
