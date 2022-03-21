@@ -32,16 +32,16 @@ $posts = new Fetch();
                 <ion-icon name="add-outline" class="font-bold text-3xl"></ion-icon>
             </a>
         </div>
-        <div class=" w-full h-full pt-24 pb-7">
-            <h1 class="">BLogs</h1>
-            <div class="w-full flex">
-                <div class="w-3/12">
+        <div class=" w-full h-full pt-24 ">
+            <h1 class="text-5xl my-8">BLogs : </h1>
+            <div class="w-full flex  pb-4">
+                <div class="w-3/12 font-bold text-lg text-gray-400">
                     Title
                 </div>
-                <div class="w-3/12">
+                <div class="w-3/12 font-bold text-lg text-gray-400">
                     Description
                 </div>
-                <div class="w-3/12">
+                <div class="w-3/12 font-bold text-lg text-gray-400">
                     Created At
                 </div>
             </div>

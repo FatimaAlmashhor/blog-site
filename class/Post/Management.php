@@ -45,7 +45,7 @@ class Management
         $this->db->bind(":postTitle",  $title, PDO::PARAM_STR);
         $this->db->bind(":postDes", $des, PDO::PARAM_STR);
         $this->db->bind(":postBody", $body, PDO::PARAM_STR);
-        $this->db->bind(":created", date("l jS \of F Y h:i:s A"), PDO::PARAM_STR_CHAR);
+        $this->db->bind(":created", date("Y/m/d"), PDO::PARAM_STR_CHAR);
         $this->db->bind(":cat", $cateid, PDO::PARAM_INT);
 
         // Execute the statement
