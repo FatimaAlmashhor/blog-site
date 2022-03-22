@@ -39,6 +39,25 @@ if (isset($_POST['submit'])) {
     <script src="https://cdn.ckeditor.com/4.18.0/full/ckeditor.js"></script>
     <link rel="stylesheet" href="../../public/css/sidebar.css">
     <link rel="stylesheet" href="../../dist/css/tailwind.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#myDropDown').change(function() {
+            //Selected value
+            var inputValue = $(this).val();
+
+            alert("value in js " + inputValue);
+
+            //Ajax for calling php function
+            $.post('submit.php', {
+                dropdownValue: inputValue
+            }, function(data) {
+                alert('ajax completed. Response:  ' + data);
+                //do after submission operation in DOM
+            });
+        });
+    });
+    </script>
     <title>Blogs</title>
 </head>
 
@@ -54,15 +73,20 @@ if (isset($_POST['submit'])) {
             <form action='./new.php' method="post" class=" flex flex-col gap-4">
                 <div class="flex flex-col lg:flex-row gap-5">
                     <label>Category:</label>
-                    <select name='main_cat' class="w-full p-3 bg-transparent border border-gray-400 rounded ">
+                    <select id='myDropDown' name='main_cat'
+                        class="w-full p-3 bg-transparent border border-gray-400 rounded ">
                         <?php
                         foreach ($mainCates as $cat) {
-                            echo "<option value=" . $cat->category_id . ">";
+                            echo "<option class='bg-transparent text-white' value=" . $cat->category_id . ">";
                             echo $cat->category_title;
                             echo " </option> ";
                         }
                         ?>
+
                     </select>
+                    <?php
+                    if (isset($_POST['main_cat']))
+                        echo $_POST['main_cat'] ?>
                     <select class="w-full p-3 bg-transparent border border-gray-400 rounded ">
                         <option>
                             Test

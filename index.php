@@ -51,7 +51,7 @@ $posts = new Fetch();
                                 <div class="pt-6 p-3 flex flex-col gap-2  h-full ">
                                     <h2 class="text-xl"><?php echo $post->blog_title; ?></h2>
                                     <div class="overflow-hidden w-full h-16">
-                                        <p class="text-gray-400"> <?php echo $post->blog_body; ?></p>
+                                        <p class="text-gray-400"> <?php echo $post->blog_des; ?></p>
                                     </div>
                                     <div class="flex flex-1 items-center justify-self-end ">
                                         <!-- Dot -->
