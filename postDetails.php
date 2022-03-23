@@ -1,8 +1,5 @@
 <?php
-// pass web-site url
-$site_url  = "localhost:80/blog-site";
-// post title
-$site_title  = "FatimaBlog";
+
 
 // back 
 $previous = "javascript:history.go(-1)";
@@ -15,6 +12,10 @@ use Post\Management;
 require_once('./vendor/autoload.php');
 $post = new Management();
 if (isset($_GET['id'])) {
+    // pass web-site url
+    $site_url  = "http://localhost:80/blog-site/postDetails.php?id=" . $_GET['id'];
+    // post title
+    $site_title  = "FatimaBlog";
     $post_id = trim($_GET['id']);
     $post->getPost($post_id);
 }
@@ -47,13 +48,13 @@ if (isset($_GET['id'])) {
             <div class="absolute  right-0 md:-right-12 flex flex-row gap-2" style="writing-mode: vertical-lr">
                 <a class="relative h-fit p-3 cursor-pointer text-white bg-blue-400 hover:bg-transparent hover:border-blue-400
                     flex justify-center items-center" style="width: 100%;"
-                    href="https://twitter.com/share?url=<?= $site_url ?>&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons"
-                    target="_blank">
+                    href="https://twitter.com/share?url='<?= $site_url ?>'&amp;text='Blog from Fatima blog'"
+                    target=" _blank">
                     <ion-icon name="logo-twitter"></ion-icon>
                 </a>
                 <a class="relative h-fit p-3 cursor-pointer text-white bg-blue-400 hover:bg-transparent hover:border-blue-400
                     flex justify-center items-center" style="width: 100%;"
-                    href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?= $site_url ?>" target="_blank">
+                    href="http://www.linkedin.com/shareArticle?mini=true&amp;url='<?= $site_url ?>'" target="_blank">
                     <ion-icon name="logo-linkedin"></ion-icon>
                 </a>
 

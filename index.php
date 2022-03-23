@@ -41,9 +41,9 @@ $posts = new Fetch();
                 <section class="flex flex-wrap gap-6">
                     <?php
                     foreach ($posts->posts as $post) {
-                    ?> <article class="bg-secondary cursor-pointer hover:border-2 border-blue rounded-lg">
+                    ?> <article class="bg-secondary cursor-pointer hover:border-2 border-primaryBlue rounded-lg">
                         <div class="w-60 h-52  relative">
-                            <div class="absolute w-12 h-12 rounded-full flex justify-center items-center bg-blue"
+                            <div class="absolute w-12 h-12 rounded-full flex justify-center items-center bg-primaryBlue"
                                 style="top:-20px;left:-20px">
                                 React
                             </div>
