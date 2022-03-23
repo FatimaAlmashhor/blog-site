@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"php index.php" ,
     "build:tailwind":"npx tailwindcss -i ./public/css/tailwind.css -o ./dist/css/tailwind.css --watch"
   },
   "author": "",
