@@ -48,17 +48,18 @@ if (isset($_GET['id'])) {
             <div class="absolute  right-0 md:-right-12 flex flex-row gap-2" style="writing-mode: vertical-lr">
                 <a class="relative h-fit p-3 cursor-pointer text-white bg-blue-400 hover:bg-transparent hover:border-blue-400
                     flex justify-center items-center" style="width: 100%;"
-                    href="https://twitter.com/share?url='<?= $site_url ?>'&amp;text='Blog from Fatima blog'"
+                    href="https://twitter.com/web/intents?url=<?= urlencode($site_url) ?>&amp;text=<?php echo $post->postTitle; ?>"
                     target=" _blank">
                     <ion-icon name="logo-twitter"></ion-icon>
                 </a>
                 <a class="relative h-fit p-3 cursor-pointer text-white bg-blue-400 hover:bg-transparent hover:border-blue-400
                     flex justify-center items-center" style="width: 100%;"
-                    href="http://www.linkedin.com/shareArticle?mini=true&amp;url='<?= $site_url ?>'" target="_blank">
+                    href="http://www.linkedin.com/shareArticle?mini=true&amp;goes here&url='<?= $site_url ?>'"
+                    target="_blank">
                     <ion-icon name="logo-linkedin"></ion-icon>
                 </a>
 
-                <a href="http://www.facebook.com/sharer.php?u=<?= $site_url ?>" target="_blank"
+                <a href="http://www.facebook.com/sharer.php?u=<?= urlencode($site_url) ?>" target="_blank"
                     class="h-fit p-3  text-white bg-blue-500 flex justify-center items-center">
                     <ion-icon name="logo-facebook"></ion-icon>
                 </a>
