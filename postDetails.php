@@ -45,10 +45,10 @@ if (isset($_GET['id'])) {
         <div class="relative bg-gray-700 p-6 w-full">
 
             <!-- share -->
-            <div class="absolute  right-0 md:-right-12 flex flex-row gap-2" style="writing-mode: vertical-lr">
+            <div class="absolute  right-0 lg:-right-12 flex flex-row gap-2" style="writing-mode: vertical-lr">
                 <a class="relative h-fit p-3 cursor-pointer text-white bg-blue-400 hover:bg-transparent hover:border-blue-400
                     flex justify-center items-center" style="width: 100%;"
-                    href="https://twitter.com/web/intents?url=<?= urlencode($site_url) ?>&amp;text=<?php echo $post->postTitle; ?>"
+                    href="https://twitter.com/intent/tweet?url=<?= urlencode($site_url) ?>&amp;text=<?php echo $post->postTitle; ?>"
                     target=" _blank">
                     <ion-icon name="logo-twitter"></ion-icon>
                 </a>
@@ -59,8 +59,8 @@ if (isset($_GET['id'])) {
                     <ion-icon name="logo-linkedin"></ion-icon>
                 </a>
 
-                <a href="http://www.facebook.com/sharer.php?u=<?= urlencode($site_url) ?>" target="_blank"
-                    class="h-fit p-3  text-white bg-blue-500 flex justify-center items-center">
+                <a href="https://www.facebook.com/share.php?u=google.com&quote=<?= urlencode($site_url) ?>"
+                    target="_blank" class="h-fit p-3  text-white bg-blue-500 flex justify-center items-center">
                     <ion-icon name="logo-facebook"></ion-icon>
                 </a>
                 <!-- <a class="h-fit p-3  text-white bg-green-400  flex justify-center items-center">

@@ -730,6 +730,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-bottom-width: 1px;
 }
 
+.border-primaryBlue {
+  --tw-border-opacity: 1;
+  border-color: rgb(80 134 196 / var(--tw-border-opacity));
+}
+
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
@@ -750,11 +755,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(75 85 99 / var(--tw-border-opacity));
 }
 
-.border-primaryBlue {
-  --tw-border-opacity: 1;
-  border-color: rgb(80 134 196 / var(--tw-border-opacity));
-}
-
 .bg-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(35 35 34 / var(--tw-bg-opacity));
@@ -763,6 +763,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-secondary {
   --tw-bg-opacity: 1;
   background-color: rgb(18 25 44 / var(--tw-bg-opacity));
+}
+
+.bg-primaryBlue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(80 134 196 / var(--tw-bg-opacity));
 }
 
 .bg-red-400 {
@@ -807,11 +812,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .bg-transparent {
   background-color: transparent;
-}
-
-.bg-primaryBlue {
-  --tw-bg-opacity: 1;
-  background-color: rgb(80 134 196 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-60 {
@@ -872,6 +872,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pb-4 {
   padding-bottom: 1rem;
+}
+
+.pl-4 {
+  padding-left: 1rem;
 }
 
 .text-7xl {
@@ -979,6 +983,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (min-width: 1024px) {
+  .lg\:-right-12 {
+    right: -3rem;
+  }
+
   .lg\:flex {
     display: flex;
   }

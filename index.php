@@ -25,9 +25,9 @@ $posts = new Fetch();
 <body class="bg-primary w-screen  text-white overflow-x-hidden">
 
     <div class='flex '>
-        <nav class="bg-secondary w-24 h-screen sticky top-0">
+        <!-- <nav class="bg-secondary w-24 h-screen sticky top-0">
             F
-        </nav>
+        </nav> -->
         <div>
             <header class="h-screen">
                 <div class="w-full h-full flex flex-col justify-center px-20">
@@ -69,9 +69,9 @@ $posts = new Fetch();
 
                 </section>
                 <!-- aside for aside articles -->
-                <aside class="hidden lg:flex">
+                <!-- <aside class="hidden lg:flex">
                     aside
-                </aside>
+                </aside> -->
             </main>
 
 
